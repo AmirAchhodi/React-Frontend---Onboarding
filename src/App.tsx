@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { ReactComponent as Logo } from 'logo.svg';
+
+// MUI
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+
+import Stepper from 'components/stepper';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Container
+            maxWidth="lg"
+            sx={{
+                minHeight: '100vh',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                paddingTop: '15vh',
+            }}>
+            <Stack
+                direction="column"
+                gap={7}
+                sx={{
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}>
+                <Stack direction="row" gap={2}>
+                    <Logo />
+                    <Typography variant="h1" fontSize={30} fontWeight={700}>
+                        Eden
+                    </Typography>
+                </Stack>
+                <Stepper />
+            </Stack>
+        </Container>
+    );
 }
 
 export default App;
